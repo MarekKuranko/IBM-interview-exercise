@@ -17,6 +17,7 @@
 
 			<div id="users">
 			  <input class="search" placeholder="Search" />
+			  <br>
 			  <button class="sort" data-sort="name">
 				Sort by name
 			  </button>
@@ -44,15 +45,17 @@
 			  <h3 id="basePhone">Phone: </h3>
 			  <h3 id="baseAdress">Adress: </h3>
 			  <h3 id="baseRegistred">Registered: </h3>
-			  <br><br>
+			  <br>
 			  <h2 id="baseBalance">Balance: <h2>
 			  <h2 id="baseActive">Active: <h2>
 			  <h2 id="baseDiscount"><h2>
 			</div>
 
 			<div id="evaluation" class="tabcontent">
-			  <h3></h3>
-			  <p></p> 
+				<h3>Notes</h3>
+				<textarea id="text" rows="8" cols="100" ></textarea>
+				<br>
+				<button id="btnSave" class="sort" onclick="save()">Save</button>
 			</div>
 		</div>
 			

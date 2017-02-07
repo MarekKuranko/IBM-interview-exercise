@@ -1,5 +1,5 @@
 ﻿/*
- * 
+ * IBM interview exercise
  */
 var jsonData;
 //
@@ -63,12 +63,11 @@ function(err, data) {
 		  active: 'active: ' + active	  
 		});	
 	});
-	document.getElementById("balance").innerHTML = "Balance: " + balance + " (positive: " + posBalacne + ", Negative: " + negBalance + ")";
+	document.getElementById("balance").innerHTML = "Balance: " + balance.formatMoney(0, '.', ',') + " (positive: " + posBalacne.formatMoney(0, '.', ',') + ", Negative: " + negBalance.formatMoney(0, '.', ',') + ")";
   }
 });
 
-function setContent(str)
-{
+function setContent(str){
 	var customer = jsonData.filter(function( obj ) {
 	  return obj.name == str;
 	});
@@ -78,8 +77,8 @@ function setContent(str)
 	document.getElementById("baseCompany").innerHTML = "Company: " +  customer[0].company;
 	document.getElementById("baseEmail").innerHTML = "Email: " +  customer[0].email;
 	document.getElementById("basePhone").innerHTML = "Phone: " +  customer[0].phone;
-	document.getElementById("baseAdress").innerHTML = "Adress: " +  customer[0].adress;
-	document.getElementById("baseRegistred").innerHTML = "Registered: " +  customer[0].registered;
+	document.getElementById("baseAdress").innerHTML = "Address: " +  customer[0].address;
+	document.getElementById("baseRegistred").innerHTML = "Registered: " +  dateFormat(customer[0].registered);
 	document.getElementById("baseBalance").innerHTML = "Balance: " +  customer[0].balance;
 	var tempStr = customer[0].balance.split(',').join('');
 	var temp = parseFloat(tempStr);
@@ -135,6 +134,21 @@ var n = this,
     j = (j = i.length) > 3 ? j % 3 : 0;
    return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
  };
+ 
+ //date format
+ function dateFormat(date){
+	 var day = date.substring(8, 10);
+	 var month = date.substring(5, 7);
+	 var year = date.substring(0, 4);
+	 var time = date.substring(11, 19);
+	 
+	 return day + "." + month + "." + year + ", " + time;
+ }
+ 
+ //save
+ function save(){
+	 var text = document.getElementById("text").value;
+ }
 
 
 

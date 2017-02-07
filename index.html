@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>IBM interview exercise - Marek Kuraňko</title>
+		<link href="css/style.css" rel="stylesheet">	
+		<link href="css/list/list.css" rel="stylesheet">							
+	</head>
+
+	<body>
+		
+		<div id="header">
+			<h3 id="balance"></h3>
+		</div>
+		
+		<div id="customers">
+			<script src="js/list/list.js"></script> 	
+
+			<div id="users">
+			  <input class="search" placeholder="Search" />
+			  <button class="sort" data-sort="name">
+				Sort by name
+			  </button>
+			  <button class="sort" data-sort="balance">
+				Sort by balance
+			  </button>
+
+			  <ul class="list"></ul>
+
+			</div>	
+		</div>
+		
+		<div id="content">
+			<ul class="tab">
+			  <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'base')" id="defaultOpen">Base Info</a></li>
+			  <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'evaluation')">Customer Evaluation</a></li>
+			</ul>
+
+			<div id="base" class="tabcontent">
+			  <h1 id="baseName">Name: </h1>
+			  <h3 id="baseAge">Age: </h3>
+			  <h3 id="baseGender">Gender: </h3>
+			  <h3 id="baseCompany">Company: </h3>
+			  <h3 id="baseEmail">Email: </h3>
+			  <h3 id="basePhone">Phone: </h3>
+			  <h3 id="baseAdress">Adress: </h3>
+			  <h3 id="baseRegistred">Registered: </h3>
+			  <br><br>
+			  <h2 id="baseBalance">Balance: <h2>
+			  <h2 id="baseActive">Active: <h2>
+			  <h2 id="baseDiscount"><h2>
+			</div>
+
+			<div id="evaluation" class="tabcontent">
+			  <h3></h3>
+			  <p></p> 
+			</div>
+		</div>
+			
+		<script src="js/script.js"></script> 
+	</body>
+</html>

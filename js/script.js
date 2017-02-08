@@ -95,6 +95,8 @@ function setContent(str){
 			}
 		}	
 	document.getElementById("baseActive").innerHTML = "Active: " +  active;
+	//note
+	document.getElementById("text").value = localStorage.getItem(document.getElementById("baseName").innerHTML);
 
 	
 }
@@ -148,7 +150,9 @@ var n = this,
  //save
  function save(){
 	 var text = document.getElementById("text").value;
- }
+	 localStorage.setItem(document.getElementById("baseName").innerHTML, text);
+     document.getElementById("text").value = localStorage.getItem(document.getElementById("baseName").innerHTML);
+}
 
 
 

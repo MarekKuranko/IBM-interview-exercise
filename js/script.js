@@ -89,7 +89,7 @@ function setContent(str){
 			var active = 'no';
 			if(temp>0){
 				temp = temp/100*10;
-				document.getElementById("baseDiscount").innerHTML = "Proposed discount: " +  temp.formatMoney(1, '.', ',');
+				document.getElementById("baseDiscount").innerHTML = "Proposed discount (10%): " +  temp.formatMoney(1, '.', ',');
 			}else{
 				document.getElementById("baseDiscount").innerHTML = "";
 			}

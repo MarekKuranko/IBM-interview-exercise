@@ -55,6 +55,23 @@ ul.tab li a:focus, .active {background-color: #ccc;}
     border-top: none;
 }
 
+/*login page and authorization*/
+#login  {
+	position : absolute;    
+    width    : 200px;
+    height   : 200px;
+    left     : 50%;
+    top      : 50%;
+    margin-left : -100px; /* half of the width  */
+    margin-top  : -100px; /* half of the height */
+}
+
+#logout {
+	position : absolute;    
+    right     : 1%;
+	top	     : 5%;
+}
+
 
 
  

@@ -52,7 +52,7 @@ function(err, data) {
 			posBalacne = posBalacne + temp;
 		}
 		//set list
-		if(m["isActive"] == "true"){
+		if(m["isActive"].valueOf() == true){
 		var active = 'yes';
 		}else {
 			var active = 'no';
@@ -63,7 +63,7 @@ function(err, data) {
 		  active: 'active: ' + active	  
 		});	
 	});
-	document.getElementById("balance").innerHTML = "Balance: " + balance.formatMoney(0, '.', ',') + " (positive: " + posBalacne.formatMoney(0, '.', ',') + ", Negative: " + negBalance.formatMoney(0, '.', ',') + ")";
+	document.getElementById("balance").innerHTML = "Balance: " + balance.formatMoney(0, '.', ',') + " (positive: " + posBalacne.formatMoney(0, '.', ',') + ", negative: " + negBalance.formatMoney(0, '.', ',') + ")";
   }
 });
 
@@ -79,10 +79,10 @@ function setContent(str){
 	document.getElementById("basePhone").innerHTML = "Phone: " +  customer[0].phone;
 	document.getElementById("baseAdress").innerHTML = "Address: " +  customer[0].address;
 	document.getElementById("baseRegistred").innerHTML = "Registered: " +  dateFormat(customer[0].registered);
-	document.getElementById("baseBalance").innerHTML = "Balance: " +  customer[0].balance;
+	document.getElementById("baseBalance").innerHTML = "Balance: " +  customer[0].balance + " (" + (parseFloat(customer[0].balance.split(',').join('')) / (balance/100)).formatMoney(2, '.', ' ') + "% of income)" ;
 	var tempStr = customer[0].balance.split(',').join('');
 	var temp = parseFloat(tempStr);
-	if(customer[0].active == "true"){
+	if(customer[0].isActive.valueOf() == true){
 		var active = 'yes';
 		document.getElementById("baseDiscount").innerHTML = "";
 		}else {
